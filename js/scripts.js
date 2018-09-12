@@ -2,7 +2,6 @@ let creditCard = document.querySelectorAll(".payment_type");
 let checkMark = document.querySelectorAll(".uncheck");
 
 creditCard.forEach(function(item){  
-    resetCheck();
     item.addEventListener("click", function(e){
         resetCard();
         resetCheck();

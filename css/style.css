@@ -112,7 +112,7 @@ body {
 
 .payment_type:hover {
     background-color: var(--hover-grey);
-    /* color: var(--white); */
+    cursor: pointer;
 }
 
 .payment_type-card {
@@ -152,6 +152,7 @@ body {
 
 .submit:hover {
     background-color: var(--darker-blue);
+    cursor: pointer;
 }
 
 .submit_btn {
