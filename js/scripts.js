@@ -1,23 +1,27 @@
-let dots = document.querySelectorAll(".dot");
 let creditCard = document.querySelectorAll(".payment_type");
+let checkMark = document.querySelectorAll(".uncheck");
 
-for (let i = 0; i < creditCard.length; i++){
-    let card = creditCard[i];
-    
-    card.addEventListener("click", function(){ 
-        resetDot();
-        dots[i].classList.add("selected_dot");
-        dots[i].classList.remove("reg_dot");
-    });
-};
+creditCard.forEach(function(item){  
+    resetCheck();
+    item.addEventListener("click", function(e){
+        resetCard();
+        resetCheck();
+        item.classList.add("selected_card");
+        e.target.children[0].children[2].classList.remove("uncheck");
+    })
+})
 
 
-// Resets back to Reg_dot
-function resetDot(){
-    for(let j = 0; j < dots.length; j++){
-        if(!(dots[j].classList.contains("reg_dot"))){
-            dots[j].classList.add("reg_dot");
-            dots[j].classList.remove("selected_dot");
-        } 
+// Resets selection to none
+function resetCard(){
+    for(let i = 0; i < creditCard.length; i++){
+        creditCard[i].classList.remove("selected_card");
+    }
+}
+
+// Remove all checkmarks
+function resetCheck(){
+    for(let i = 0; i < checkMark.length; i++){
+        checkMark[i].classList.add("uncheck");
     }
 }
